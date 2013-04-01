@@ -9,22 +9,18 @@ $(function () {
   };
 
   function placeCellMarkers(cell, res, last) {
-    var color = '009900';
+    var color = 'green';
     if (cell[0] == "g") {
-      color = '990000';
+      color = 'blue';
     }
     $('#map').gmap3({
       marker : {
         options : {
           position : [parseFloat(cell[8]), parseFloat(cell[9])],
           flat : true,
-          icon : new google.maps.MarkerImage(
-            "http://www.googlemapsmarkers.com/v1/" + color,
-            null,
-            null,
-            null,
-            new google.maps.Size(8, 10)
-            )
+          icon : { 
+            url: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_' + color + '.png',
+          }
         }
       }
     });
